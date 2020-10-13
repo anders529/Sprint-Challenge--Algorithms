@@ -99,14 +99,14 @@ class SortingRobot:
         Sort the robot's list.
         """
 
-        self.set_light_on()
-        while self.light_is_on():
-            self.set_light_off()
-            self.swap_item()
+        self.set_light_on()  # Setting the light to on.
+        while self.light_is_on():  # Starting a while Loop.
+            self.set_light_off()  # Setting the Light to off.
+            self.swap_item()  # Here we are going to swap the light on or off.
 
-            while self.can_move_right():
+            while self.can_move_right():  # Writing a while loop to to check to see if it can move right.
                 self.move_right()
-                if self.compare_item() == 1:
+                if self.compare_item() == 1:  # Comparing the item to see if it's equal to 1
                     self.swap_item()
 
             while self.can_move_left() and self.compare_item() is not None:
@@ -118,6 +118,7 @@ class SortingRobot:
                 self.set_light_off()
             else:
                 self.set_light_on()
+
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
